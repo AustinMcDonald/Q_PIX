@@ -5,43 +5,51 @@
 
 #include <algorithm>
 #include <ctime>
+#include <iostream>
 
-int main() 
+
+int main(int argc, char *argv[]) 
 {  
+
+   int All_Event = atoi(argv[1]);
+   int Reset     = atoi(argv[2]);
+   double Life_Time = std::stod(argv[3]);
+
+   std::string Input_File        = argv[4];
+   std::string Output_File_Truth = argv[5];
+   std::string Output_File_Sim   = argv[6];
+
+
    clock_t time_req;
    time_req = clock();
    
-   double Wvalue, E_vel, DiffusionL, DiffusionT, Life_Time;
+   double Wvalue, E_vel, DiffusionL, DiffusionT;
    Wvalue = 23.6; // in eV
    E_vel = 1.648; //mm/mus
    DiffusionL = 682.23/1e6;  //mm**2/mus
    DiffusionT = 1315.86/1e6; //mm**2/mus
-   Life_Time = 10000; // in mus 10ms
+   //Life_Time = 10000; // in mus 10ms
    //Life_Time = 3000; // in mus 3ms
    //Life_Time = 1000; // in mus 1ms
 
-   //std::string Input_File  = "Ar39_10k.txt";
-   //std::string Output_FileS = "Ar_Sim.txt";
-   //std::string Output_File = "Ar_Truth.txt";
-
-   std::string Input_File  = "Muon_100.txt";
+   /* std::string Input_File  = "Muon_100.txt";
    std::string Output_FileS = "Muon_Sim.txt";
-   std::string Output_File = "Muon_Truth.txt";
+   std::string Output_File = "Muon_Truth.txt"; */
 
    std::ofstream data_out;
-   data_out.open (Output_File , std::ios::ate);
+   data_out.open (Output_File_Truth , std::ios::ate);
 
    // Read out plane size in mm
    int Readout_Dim = 1000;
    int Pix_Size = 4;
 
-   int Reset = 6250;
+   //int Reset = 6250;
    //int Reset = 3125;
    //int Reset = 625;
    
    int Start_Time = 0, End_Time = 3200; // buffer
 
-   int All_Event = 100;
+   //int All_Event = 100;
 
    for (int i = 0; i < All_Event; i++) 
    {   
@@ -77,9 +85,7 @@ int main()
       Dead = Qpix::Make_Dead_Time(Readout_Dim, Pix_Size, Reset);
 
       std::vector<std::vector<double>> RTD;
-      //RTD = Qpix::Make_Reset_ResponseD(Reset, Pix_Size, E_vel, Event_Length, Pixels_Hit_Len, Noise_Vector_Size, Start_Time, End_Time,
-      //                         Gaussian_Noise, Pixels_Hit, data2d, Electron_Event_Vector, Dead);
-
+      
       RTD = Qpix::Make_Truth_Reset_Response( Reset, Pix_Size, E_vel, Event_Length, data2d,  Electron_Event_Vector);
 
       int RTD_len = RTD.size();
@@ -126,7 +132,7 @@ int main()
 
 
    //std::ofstream data_out;
-   data_out.open (Output_FileS , std::ios::ate);
+   data_out.open (Output_File_Sim , std::ios::ate);
 
    for (int i = 0; i < All_Event; i++) 
    {   
@@ -164,8 +170,6 @@ int main()
       std::vector<std::vector<double>> RTD;
       RTD = Qpix::Make_Reset_ResponseD(Reset, Pix_Size, E_vel, Event_Length, Pixels_Hit_Len, Noise_Vector_Size, Start_Time, End_Time,
                                Gaussian_Noise, Pixels_Hit, data2d, Electron_Event_Vector, Dead);
-
-      //RTD = Qpix::Make_Truth_Reset_Response( Reset, Pix_Size, E_vel, Event_Length, data2d,  Electron_Event_Vector);
 
       int RTD_len = RTD.size();
       for (int curr = 0; curr < Pixels_Hit_Len; curr++) 
