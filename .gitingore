@@ -6,21 +6,21 @@
 *.out
 
 # ingore the geant4 build
-G4_QPIX/Build/*
+/G4_QPIX/Build/*
 
 # ingore the RTD build and lib
-RTD_QPIX/Build/*
-RTD_QPIX/Library/*
+/RTD_QPIX/Build/*
+/RTD_QPIX/Library/*
 
-Production/Ar39/Macros/*
-Production/Ar39/Scripts/*
-Production/Ar39/Outputs/*
+/Production/Ar39/Macros/*
+/Production/Ar39/Scripts/*
+/Production/Ar39/Outputs/*
 
-Production/Muons/Macros/*
-Production/Muons/Scripts/*
-Production/Muons/Outputs/*
+/Production/Muons/Macros/*
+/Production/Muons/Scripts/*
+/Production/Muons/Outputs/*
 
-Production/Protons/Macros/*
-Production/Protons/Scripts/*
-Production/Protons/Outputs/*
+/Production/Protons/Macros/*
+/Production/Protons/Scripts/*
+/Production/Protons/Outputs/*
 
