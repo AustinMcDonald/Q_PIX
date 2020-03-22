@@ -1,0 +1,12 @@
+
+# ingore these in general
+*.txt
+*.sh
+*.mac
+
+# ingore the geant4 build
+G4_QPIX/Build/*
+
+# ingore the RTD build and lib
+RTD_QPIX/Build/*
+RTD_QPIX/Library/*
