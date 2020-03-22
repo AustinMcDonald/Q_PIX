@@ -1,4 +1,4 @@
-# Install script for directory: /n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX
+# Install script for directory: /Users/austinmcdonald/projects/Q_PIX/RTD_QPIX
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,11 +27,6 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
@@ -45,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/Build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/Build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

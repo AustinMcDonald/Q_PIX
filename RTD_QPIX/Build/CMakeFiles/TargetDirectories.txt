@@ -1,3 +1,3 @@
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/Build/CMakeFiles/rebuild_cache.dir
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/Build/CMakeFiles/edit_cache.dir
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/Build/CMakeFiles/Qpix.dir
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/Build/CMakeFiles/rebuild_cache.dir
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/Build/CMakeFiles/edit_cache.dir
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/Build/CMakeFiles/Qpix.dir

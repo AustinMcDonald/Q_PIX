@@ -1,2 +1,2 @@
-/usr/bin/ar qc libQpix.a  CMakeFiles/Qpix.dir/source/ElectronHandler.cc.o CMakeFiles/Qpix.dir/source/PixelResponse.cc.o CMakeFiles/Qpix.dir/source/Random.cc.o CMakeFiles/Qpix.dir/source/ReadG4txt.cc.o CMakeFiles/Qpix.dir/source/XorShift256.cc.o
-/usr/bin/ranlib libQpix.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libQpix.a  CMakeFiles/Qpix.dir/source/ElectronHandler.cc.o CMakeFiles/Qpix.dir/source/PixelResponse.cc.o CMakeFiles/Qpix.dir/source/Random.cc.o CMakeFiles/Qpix.dir/source/ReadG4txt.cc.o CMakeFiles/Qpix.dir/source/XorShift256.cc.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libQpix.a

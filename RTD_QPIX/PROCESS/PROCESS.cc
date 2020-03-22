@@ -19,7 +19,6 @@ int main(int argc, char *argv[])
    std::string Output_File_Truth = argv[5];
    std::string Output_File_Sim   = argv[6];
 
-
    clock_t time_req;
    time_req = clock();
    
@@ -28,13 +27,7 @@ int main(int argc, char *argv[])
    E_vel = 1.648; //mm/mus
    DiffusionL = 682.23/1e6;  //mm**2/mus
    DiffusionT = 1315.86/1e6; //mm**2/mus
-   //Life_Time = 10000; // in mus 10ms
-   //Life_Time = 3000; // in mus 3ms
-   //Life_Time = 1000; // in mus 1ms
-
-   /* std::string Input_File  = "Muon_100.txt";
-   std::string Output_FileS = "Muon_Sim.txt";
-   std::string Output_File = "Muon_Truth.txt"; */
+   
 
    std::ofstream data_out;
    data_out.open (Output_File_Truth , std::ios::ate);
@@ -43,13 +36,7 @@ int main(int argc, char *argv[])
    int Readout_Dim = 1000;
    int Pix_Size = 4;
 
-   //int Reset = 6250;
-   //int Reset = 3125;
-   //int Reset = 625;
-   
    int Start_Time = 0, End_Time = 3200; // buffer
-
-   //int All_Event = 100;
 
    for (int i = 0; i < All_Event; i++) 
    {   
@@ -75,7 +62,7 @@ int main(int argc, char *argv[])
       Electron_Event_Vector = Qpix::Diffuser( Wvalue, E_vel, 1000000, DiffusionL, DiffusionT, Specific_Event);
 
       int Event_Length = Electron_Event_Vector.size();
-
+      std::cout << "The cloud contains " << Event_Length << " electrons" << std::endl;
       std::vector<std::vector<int>> Pixels_Hit;
       Pixels_Hit = Qpix::Find_Unique_Pixels(Pix_Size, Event_Length, Electron_Event_Vector);
 

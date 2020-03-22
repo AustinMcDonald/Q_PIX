@@ -28,7 +28,7 @@ vector
 stdint.h
 -
 
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/source/ElectronHandler.cc
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/source/ElectronHandler.cc
 iostream
 -
 vector
@@ -38,9 +38,9 @@ math.h
 algorithm
 -
 Qpix/Random.h
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/source/Qpix/Random.h
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/source/Qpix/Random.h
 
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/source/PixelResponse.cc
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/source/PixelResponse.cc
 iostream
 -
 vector
@@ -52,19 +52,19 @@ algorithm
 math.h
 -
 Qpix/ElectronHandler.h
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/source/Qpix/ElectronHandler.h
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/source/Qpix/ElectronHandler.h
 Qpix/Random.h
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/source/Qpix/Random.h
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/source/Qpix/Random.h
 
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/source/Random.cc
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/source/Random.cc
 Qpix/XorShift256.h
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/source/Qpix/XorShift256.h
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/source/Qpix/XorShift256.h
 math.h
 -
 vector
 -
 
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/source/ReadG4txt.cc
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/source/ReadG4txt.cc
 iostream
 -
 fstream
@@ -74,7 +74,7 @@ vector
 algorithm
 -
 
-/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/source/XorShift256.cc
+/Users/austinmcdonald/projects/Q_PIX/RTD_QPIX/source/XorShift256.cc
 stdint.h
 -
 cstring
