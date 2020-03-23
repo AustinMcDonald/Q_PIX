@@ -14,7 +14,7 @@ def ScriptGen(N_Events, Reset, LT, In_File, In_File_Name, Truth_Out_Path, Sim_Ou
     PROCESS = "./n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/PROCESS/PROCESS "
 
     Command = PROCESS+" "+str(N_Events)+' '+str(Reset)+' '+str(LT)+' '+In_File+' '+T_NAME+' '+S_NAME
-    with open(NAME+'.sh','w') as File:
+    with open('/Scripts/'+NAME+'.sh','w') as File:
         File.write("#!/bin/bash"+"\n")
         File.write("#SBATCH -n 1                # Number of cores "+"\n")
         File.write("#SBATCH -N 1                # Ensure that all cores are on one machine"+"\n")
@@ -41,7 +41,12 @@ In_Files = glob.glob('/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/Produ
 Truth_Out_Path = '/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/Analysis/Ar39/Outputs'
 Sim_Out_Path   = Truth_Out_Path
 
-In_File_Name = In_Files[0].split('/')[-1].split('.txt')[0]
 In_File = In_Files[0]
+In_File_Name = In_File.split('/')[-1].split('.txt')[0]
 
-ScriptGen(N_Events, Reset[0], LT[0], In_File, In_File_Name, Truth_Out_Path, Sim_Out_Path)
+for In_File in In_Files:
+    In_File_Name = In_File.split('/')[-1].split('.txt')[0]
+
+    for R in Reset:
+        for lt in LT:
+            ScriptGen(N_Events, R, lt, In_File, In_File_Name, Truth_Out_Path, Sim_Out_Path)
