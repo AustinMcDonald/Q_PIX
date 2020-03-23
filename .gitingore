@@ -24,3 +24,11 @@
 /Production/Protons/Scripts/*
 /Production/Protons/Outputs/*
 
+/Analysis/Ar39/Scripts/*
+/Analysis/Ar39/Outputs/*
+
+/Analysis/Muons/Scripts/*
+/Analysis/Muons/Outputs/*
+
+/Analysis/Protons/Scripts/*
+/Analysis/Protons/Outputs/*
