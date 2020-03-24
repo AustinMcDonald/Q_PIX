@@ -8,13 +8,13 @@ def ScriptGen(N_Events, Reset, LT, In_File, In_File_Name, Truth_Out_Path, Sim_Ou
 
     NAME = str(Reset)+'_'+str(LT)+'_'+In_File_Name
 
-    T_NAME = Truth_Out_Path+"/Truth"+"_"+NAME+'.txt'
-    S_NAME = Sim_Out_Path+"/Sim"+"_"+NAME+'.txt'
+    T_NAME = Truth_Out_Path+"Truth"+"_"+NAME+'.txt'
+    S_NAME = Sim_Out_Path+"Sim"+"_"+NAME+'.txt'
 
-    PROCESS = "./n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/PROCESS/PROCESS "
+    PROCESS = "/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX/PROCESS/PROCESS "
 
     Command = PROCESS+" "+str(N_Events)+' '+str(Reset)+' '+str(LT)+' '+In_File+' '+T_NAME+' '+S_NAME
-    with open('/Scripts/'+NAME+'.sh','w') as File:
+    with open('Scripts/'+NAME+'.sh','w') as File:
         File.write("#!/bin/bash"+"\n")
         File.write("#SBATCH -n 1                # Number of cores "+"\n")
         File.write("#SBATCH -N 1                # Ensure that all cores are on one machine"+"\n")
@@ -22,11 +22,7 @@ def ScriptGen(N_Events, Reset, LT, In_File, In_File_Name, Truth_Out_Path, Sim_Ou
         File.write("#SBATCH -p guenette         # Partition to submit to "+"\n")
         File.write("#SBATCH --mem=2000           # Memory pool for all cores (see also --mem-per-cpu)"+"\n")
         File.write("\n")
-        #File.write("PATH=$PATH:$HOME/bin"+"\n")                                                                                                                                    
-        #File.write("cd /n/holylfs02/LABS/guenette_lab/users/amcdonald"+"\n")                                                                                                       
-        #File.write("source ic_setup.sh"+"\n")                                                                                                                                      
-        #File.write("export PYTHONPATH=$PYTHONPATH:/n/holylfs02/LABS/guenette_lab/users/amcdonald/Xenon_Scattering/PyBoltz/src/Cython/ "+"\n")                                      
-        #File.write("cd /n/holylfs02/LABS/guenette_lab/users/amcdonald/Xenon_Scattering/PyBoltz/src/Examples/ "+"\n")                                                               
+        File.write("export QpixDir=/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/RTD_QPIX "+"\n")
         File.write("\n")
         File.write(Command)
         File.write("\n")
@@ -38,7 +34,7 @@ Reset = [6250, 3125, 625]
 LT = [1000000, 10000, 3000, 1000]
 
 In_Files = glob.glob('/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/Production/Ar39/Outputs/'+'*.txt')
-Truth_Out_Path = '/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/Analysis/Ar39/Outputs'
+Truth_Out_Path = '/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/Analysis/Ar39/Outputs/'
 Sim_Out_Path   = Truth_Out_Path
 
 In_File = In_Files[0]
