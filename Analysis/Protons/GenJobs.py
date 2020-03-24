@@ -29,12 +29,12 @@ def ScriptGen(N_Events, Reset, LT, In_File, In_File_Name, Truth_Out_Path, Sim_Ou
 
 
 
-N_Events = 10000
+N_Events = 1000
 Reset = [6250, 3125, 625]
 LT = [1000000, 10000, 3000, 1000]
 
-In_Files = glob.glob('/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/Production/Ar39/Outputs/'+'*.txt')
-Truth_Out_Path = '/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/Analysis/Ar39/Outputs/'
+In_Files = glob.glob('/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/Production/Protons/Outputs/'+'*.txt')
+Truth_Out_Path = '/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/Analysis/Protons/Outputs/'
 Sim_Out_Path   = Truth_Out_Path
 
 In_File = In_Files[0]
