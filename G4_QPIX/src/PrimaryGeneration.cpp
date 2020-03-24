@@ -14,7 +14,7 @@
 #include <G4PrimaryParticle.hh>
 #include <G4PrimaryVertex.hh>
 #include <G4Event.hh>
-//#include <G4Electron.hh>
+#include <G4Electron.hh>
 #include <G4MuonPlus.hh>
 #include <G4Proton.hh>
 
@@ -30,7 +30,6 @@ PrimaryGeneration::PrimaryGeneration():
   msg_ = new G4GenericMessenger(this, "/Inputs/", "Control commands of the ion primary generator.");
   msg_->DeclareProperty("Particle_Type", Particle_Type_,  "which particle?");
   //msg_->DeclareProperty("Particle_energy", Particle_Energy_,  "Energy of the particle.");
-
 }
 
 
@@ -98,6 +97,19 @@ void PrimaryGeneration::GeneratePrimaries(G4Event* event)
     particle->SetKineticEnergy(100.*MeV); // just an ion sitting
 
     G4PrimaryVertex* vertex = new G4PrimaryVertex(G4ThreeVector(Ran_X,Ran_Y,Ran_Z), 0.);
+    vertex->SetPrimary(particle);
+    event->AddPrimaryVertex(vertex);
+  }
+  else if (Particle_Type_ ==  "Electron")
+  {
+    G4ParticleDefinition* pdef = G4Electron::Definition();
+
+    G4PrimaryParticle* particle = new G4PrimaryParticle(pdef);
+    particle->SetMomentumDirection(G4ThreeVector(0.,1.,0.));
+    particle->SetKineticEnergy(3.*MeV); 
+
+    
+    G4PrimaryVertex* vertex = new G4PrimaryVertex(G4ThreeVector(0, 0 ,0.5), 0.);
     vertex->SetPrimary(particle);
     event->AddPrimaryVertex(vertex);
   }
