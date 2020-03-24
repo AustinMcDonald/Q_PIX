@@ -14,7 +14,7 @@ ScriptsPath = cwd+ "/Scripts/"
 G4_QPIX = "/n/holylfs02/LABS/guenette_lab/users/amcdonald/Q_PIX/G4_QPIX/Build/app/G4Basic "
 
 Total_Events = 1e6
-Events_File  = int(10e3)
+Events_File  = int(1000)
 N_Jobs       = int(Total_Events/Events_File)
 
 macro_vars = {}
@@ -22,7 +22,7 @@ macro_vars = {}
 for i in range(N_Jobs):
 
     macro_vars['output_file']  = OutputDir+str(i).zfill(6)+'.txt'
-    macro_vars['particle']     = 'Ar39'
+    macro_vars['particle']     = 'Proton'
     macro_vars['n_events']     = Events_File
 
     ConfigFile = MacroPath+str(i).zfill(6)+".mac"
